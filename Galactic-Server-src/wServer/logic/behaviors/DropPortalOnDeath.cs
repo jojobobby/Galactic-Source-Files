@@ -30,7 +30,7 @@ namespace wServer.logic.behaviors
                     return;
                 
                 if (e.Host.CurrentState.Is(parent) &&
-                    Random.NextDouble() < _probability)
+                    Random.NextDouble() < Math.Min(1, Math.Max(0, _probability)))
                 {
                     var manager = e.Host.Manager;
                     var gameData = manager.Resources.GameData;
